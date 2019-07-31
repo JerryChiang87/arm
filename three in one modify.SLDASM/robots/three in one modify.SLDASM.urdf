@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.0-0-g9aa0fdb  Build Version: 1.5.7004.21443
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="three in one modify.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00346933945456242 -0.187455100746242 0.344863277084193"
+        rpy="0 0 0" />
+      <mass
+        value="0.000649886540879608" />
+      <inertia
+        ixx="1.57694089739825E-08"
+        ixy="-1.85712509371615E-11"
+        ixz="-1.05002104224578E-14"
+        iyy="1.58132571662871E-08"
+        iyz="5.0387453413164E-14"
+        izz="3.00533238555579E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="plate_Link">
+    <inertial>
+      <origin
+        xyz="0.00307787898294945 -0.212063205851944 -0.0162575190734835"
+        rpy="0 0 0" />
+      <mass
+        value="0.33999524895747" />
+      <inertia
+        ixx="0.000521431563785852"
+        ixy="-7.44439971942014E-09"
+        ixz="-5.60683966135022E-09"
+        iyy="0.00068679188020829"
+        iyz="1.70292938581666E-08"
+        izz="0.000206853385790905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/plate_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/plate_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plate_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00346935049207066 -0.185955046190881 0.344267945595491"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plate_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_knuckle_Link">
+    <inertial>
+      <origin
+        xyz="-0.0102903979344891 0.00212702235552203 0.00553725280320078"
+        rpy="0 0 0" />
+      <mass
+        value="0.00670041655240986" />
+      <inertia
+        ixx="9.07025861316121E-07"
+        ixy="-9.76336018478275E-08"
+        ixz="-1.4425647357174E-14"
+        iyy="9.47619204261119E-07"
+        iyz="-1.54390617401213E-13"
+        izz="1.84459409869109E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_knuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_knuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knuckle_joint"
+    type="revolute">
+    <origin
+      xyz="0.011771 -0.17996 0.37242"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_knuckle_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_knuckle_Link">
+    <inertial>
+      <origin
+        xyz="0.0053270533216794 0.00429884669473102 0.00561697418736173"
+        rpy="0 0 0" />
+      <mass
+        value="0.0065706650220916" />
+      <inertia
+        ixx="8.77365661165877E-07"
+        ixy="1.45077204156848E-07"
+        ixz="-1.14194769459354E-14"
+        iyy="9.69880856340976E-07"
+        iyz="-3.17392529864133E-14"
+        izz="1.83739003819251E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_knuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_knuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knuckle_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0149074003045468 -0.17995504619088 0.370196071373096"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_knuckle_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_upperknuckle_Link">
+    <inertial>
+      <origin
+        xyz="0.00101037954300925 0.00460141507644329 0.0107840374566842"
+        rpy="0 0 0" />
+      <mass
+        value="0.00495743586878886" />
+      <inertia
+        ixx="1.2489998164633E-06"
+        ixy="-1.63217244588323E-13"
+        ixz="1.35705432813109E-14"
+        iyy="2.23019060664547E-07"
+        iyz="-2.8733388356579E-08"
+        izz="1.03341714734279E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_upperknuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_upperknuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_upperknuckle_joint"
+    type="revolute">
+    <origin
+      xyz="0.028072 -0.18296 0.39641"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_upperknuckle_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_upperknuckle_Link">
+    <inertial>
+      <origin
+        xyz="0.00107784632695287 0.00627599956016872 -0.00915527995590619"
+        rpy="0 0 0" />
+      <mass
+        value="0.00482768433847063" />
+      <inertia
+        ixx="1.24179575596474E-06"
+        ixy="-2.90994021845089E-14"
+        ixz="1.03111625009509E-14"
+        iyy="2.45280712744405E-07"
+        iyz="2.70472085906696E-08"
+        izz="1.00375694719255E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_upperknuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_upperknuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_upperknuckle_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0350827580332564 -0.18295504619088 0.394387080866216"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_upperknuckle_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_innerknuckle_Link">
+    <inertial>
+      <origin
+        xyz="-0.0038005233206086 -0.0134056174592666 0.00127950585628442"
+        rpy="0 0 0" />
+      <mass
+        value="0.00528549093724204" />
+      <inertia
+        ixx="7.33366576401042E-07"
+        ixy="-2.14791548573843E-08"
+        ixz="2.07612702263158E-17"
+        iyy="8.13551075528335E-07"
+        iyz="1.75634885660641E-17"
+        izz="1.53898932102994E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_innerknuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_innerknuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_innerknuckle_joint"
+    type="revolute">
+    <origin
+      xyz="0.0015306 -0.18596 0.39074"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_innerknuckle_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_innerknuckle_Link">
+    <inertial>
+      <origin
+        xyz="0.00366626793478309 -0.0150315862886758 0.00127950585628445"
+        rpy="0 0 0" />
+      <mass
+        value="0.00528549093724205" />
+      <inertia
+        ixx="7.24372164400222E-07"
+        ixy="6.98106926886216E-08"
+        ixz="2.1537533754777E-17"
+        iyy="8.22545487526953E-07"
+        iyz="1.69285482208447E-17"
+        izz="1.53898932102774E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_innerknuckle_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_innerknuckle_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_innerknuckle_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0099694 -0.18596 0.39224"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_innerknuckle_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_gripper_Link">
+    <inertial>
+      <origin
+        xyz="0.00299999992482775 -0.00166044078913841 0.00056762135300294"
+        rpy="0 0 0" />
+      <mass
+        value="0.00354251025362108" />
+      <inertia
+        ixx="9.43395038799959E-07"
+        ixy="2.65677935016094E-15"
+        ixz="-1.12985197869383E-15"
+        iyy="9.79453439303817E-08"
+        iyz="1.02313720058896E-07"
+        izz="8.50763450426895E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/right_gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_gripper_joint"
+    type="revolute">
+    <origin
+      xyz="-0.026401 -0.18296 0.41587"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_gripper_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_gripper_Link">
+    <inertial>
+      <origin
+        xyz="0.00299999992481781 -0.00184838869285076 -0.000816903573842995"
+        rpy="0 0 0" />
+      <mass
+        value="0.00354251025362103" />
+      <inertia
+        ixx="9.4339503880215E-07"
+        ixy="-2.65755610514477E-15"
+        ixz="-1.12907613249926E-15"
+        iyy="8.89509319317603E-08"
+        iyz="-1.04887835347022E-07"
+        izz="8.59757862427709E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/left_gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_gripper_joint"
+    type="revolute">
+    <origin
+      xyz="0.017189 -0.18296 0.41758"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_gripper_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="2" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="top_Link">
+    <inertial>
+      <origin
+        xyz="-0.0263106321627168 -0.0172686109324065 -0.00535994998866896"
+        rpy="0 0 0" />
+      <mass
+        value="0.0123889307378301" />
+      <inertia
+        ixx="5.02837131438049E-06"
+        ixy="1.31589557882473E-07"
+        ixz="1.41287951711126E-07"
+        iyy="7.05725820585874E-06"
+        iyz="-4.99506386348457E-09"
+        izz="8.88412241134963E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/top_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0274509803921569 0.564705882352941 0.949019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/top_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_joint"
+    type="revolute">
+    <origin
+      xyz="-0.03025 -0.18411 0.28112"
+      rpy="1.5708 -0.0027146 3.105" />
+    <parent
+      link="base_link" />
+    <child
+      link="top_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="mid_Link">
+    <inertial>
+      <origin
+        xyz="0.02769729966379 -0.0236177559642039 0.00013363538316985"
+        rpy="0 0 0" />
+      <mass
+        value="0.00969296497618821" />
+      <inertia
+        ixx="3.67091395658714E-06"
+        ixy="-8.82376425943415E-09"
+        ixz="4.69335990312016E-08"
+        iyy="5.19943984950876E-06"
+        iyz="2.49422049303399E-10"
+        izz="7.92219145683879E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/mid_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/mid_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mid_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0269 -0.18628 0.19089"
+      rpy="1.5708 0.0057717 -0.011031" />
+    <parent
+      link="base_link" />
+    <child
+      link="mid_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="lower_Link">
+    <inertial>
+      <origin
+        xyz="0.0286194840494517 0.0246875643031201 0.00106148578619783"
+        rpy="0 0 0" />
+      <mass
+        value="0.00969296497618863" />
+      <inertia
+        ixx="3.67043462176264E-06"
+        ixy="9.18156300880172E-09"
+        ixz="-1.21211322427166E-08"
+        iyy="5.19938033866164E-06"
+        iyz="9.42666382747788E-11"
+        izz="7.92273030251123E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/lower_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/lower_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_joint"
+    type="fixed">
+    <origin
+      xyz="-0.027816 -0.18573 0.089223"
+      rpy="1.5708 -0.0060049 0.0028434" />
+    <parent
+      link="base_link" />
+    <child
+      link="lower_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="lowerplate_link">
+    <inertial>
+      <origin
+        xyz="0.000120467603388755 -4.13839093707667E-05 0.00443674982274356"
+        rpy="0 0 0" />
+      <mass
+        value="0.0100426099736623" />
+      <inertia
+        ixx="7.27899668663442E-06"
+        ixy="5.75386591169484E-15"
+        ixz="6.84276555152292E-09"
+        iyy="3.55123319570022E-06"
+        iyz="-1.88381734358784E-10"
+        izz="3.78776749038145E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/lowerplate_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0274509803921569 0.564705882352941 0.949019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://three in one modify.SLDASM/meshes/lowerplate_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lowerplate_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.17221 0.072597"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lowerplate_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1000"
+      velocity="1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+</robot>
