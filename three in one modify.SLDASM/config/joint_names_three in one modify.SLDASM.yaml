@@ -1,1 +1,0 @@
-controller_joint_names: ['', 'plate_joint', 'left_knuckle_joint', 'right_knuckle_joint', 'left_upperknuckle_joint', 'right_upperknuckle_joint', 'left_innerknuckle_joint', 'right_innerknuckle_joint', 'right_gripper_joint', 'left_gripper_joint', 'top_joint', 'mid_joint', 'lowerplate_joint', ]
