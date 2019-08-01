@@ -3,7 +3,7 @@
     name="model" />
   <arg
     name="gui"
-    default="False" />
+    default="True" />
   <param
     name="robot_description"
     textfile="$(find three in one 2.SLDASM)/urdf/three in one 2.SLDASM.urdf" />
