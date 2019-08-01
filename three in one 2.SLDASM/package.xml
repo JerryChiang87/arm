@@ -7,7 +7,7 @@
 for three in one 2.SLDASM robot</p>
   </description>
   <author>TODO</author>
-  <maintainer email="TODO@email.com" />
+  <maintainer email="jerrychiang87@gmail.com" />
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>roslaunch</depend>
