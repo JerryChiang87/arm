@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'lower_plate', 'lower_arm', 'mid_arm', 'upper_arm', 'gripper_plate', 'gripper', ]
